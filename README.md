@@ -1,4 +1,4 @@
-# Entity Matching with LLMs – Pipeline Overview
+# Set-wise Entity Matching with LLMs – Pipeline Overview
 
 This repository provides multiple entity resolution pipelines that leverage large language models (LLMs) and vector-based blocking to cluster product/record references from different sources. 
 
