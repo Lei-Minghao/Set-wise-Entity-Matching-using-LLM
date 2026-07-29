@@ -5,12 +5,12 @@ This repository provides multiple entity resolution pipelines that leverage larg
 The code supports several benchmark datasets (DBLP-ACM, Walmart-Amazon, WDC, Solute, and custom samples) and includes:
 
 * **Single-prompt baseline** (Gemini) for direct clustering.
-* **CoMEM Pipeline**:
+* **Improved CoMEM Pipeline**:
   * **Blocking** (TF-IDF / LSH) to generate candidate pairs.
   * **LLM-based ranking** (Qwen) for reordering candidates.
   * **LLM-based selection** (Gemini) to decide which candidates match.
   * **Transitive clustering** (union-find) to produce final entity clusters.
-* **Full LLMCER pipeline** with LSH blocking, MDG separation, and anti-transitivity merging.
+* **Improved LLMCER pipeline** with LSH blocking, MDG separation, and anti-transitivity merging.
 
 All scripts are designed to run on Google Cloud Vertex AI (Gemini) and optionally on local GPUs (Qwen models via Hugging Face).
 
@@ -111,7 +111,7 @@ python Single_prompt_{dataset}.py
 * Results are saved in `Single prompt/results/`.
 
 
-## Running CoMEM Pipelines
+## Running Improved CoMEM Pipelines
 
 ### 1. Blocking (Candidate Generation)
 The blocking scripts (inside `CoMEM/`) create candidate pairs for a given dataset using TF-IDF cosine similarity.
@@ -160,7 +160,7 @@ python compound_{dataset}.py \
 ```
 The final output includes per-anchor details and merged clusters.
 
-## Full LLMCER Pipeline
+## Running Improved LLMCER Pipeline
 `llmcer_{dataset}.py` implements the full pipeline: LSH blocking, LLM separation with MDG correction, and hierarchical merging with anti-transitivity.
 
 set `run_llmcer.sh`
