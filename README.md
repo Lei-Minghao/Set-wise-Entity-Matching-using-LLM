@@ -11,6 +11,10 @@ The code supports several benchmark datasets (DBLP-ACM, Walmart-Amazon, WDC, Sol
   * **LLM-based selection** (Gemini) to decide which candidates match.
   * **Transitive clustering** (union-find) to produce final entity clusters.
 * **Improved LLMCER pipeline** with LSH blocking, MDG separation, and anti-transitivity merging.
+* **References:**
+<br><sup>1</sup> Original CoMEM methodology: [CoMEM](https://github.com/tshu-w/ComEM)
+<br><sup>2</sup> Original LLM-CER methodology: [LLM-CER](https://github.com/ZJU-DAILY/LLMCER)
+
 
 All scripts are designed to run on Google Cloud Vertex AI (Gemini) and optionally on local GPUs (Qwen models via Hugging Face).
 
